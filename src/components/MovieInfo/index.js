@@ -24,7 +24,7 @@ const MovieInfo = ({ movie }) => {
                 <Text>
                     <h1>{movie.title}</h1>
                     <h3>PLOT</h3>
-                    <p>{movie.overiew}</p>
+                    <p>{movie.overview}</p>
 
                     <div className="rating-directors">
                         <div>
