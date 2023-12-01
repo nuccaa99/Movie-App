@@ -33,20 +33,20 @@ export const useMovieFetch = movieId => {
       }
     };
 
-    // const sessionState = isPersistedState(movieId);
-    // if (sessionState) {
-    //   setState(sessionState);
-    //   setLoading(false);
-    //   return;
-    // }
+    const sessionState = isPersistedState(movieId);
+    if (sessionState) {
+      setState(sessionState);
+      setLoading(false);
+      return;
+    }
 
     fetchMovie();
   }, [movieId]);
 
   // Write to sessionStorage
-//   useEffect(() => {
-//     sessionStorage.setItem(movieId, JSON.stringify(state));
-//   }, [movieId, state]);
+  useEffect(() => {
+    sessionStorage.setItem(movieId, JSON.stringify(state));
+  }, [movieId, state]);
 
   return { state, loading, error };
 };
